@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+struct Date {
+    int day;
+    int month;
+    int year;
+};
+
+int main() {
+    struct Date dob, today;
+    int ageYears, ageMonths, ageDays;
+
+    // Input date of birth
+    printf("Enter date of birth (DD MM YYYY): ");
+    scanf("%d %d %d", &dob.day, &dob.month, &dob.year);
+
+    // Input today's date
+    printf("Enter current date (DD MM YYYY): ");
+    scanf("%d %d %d", &today.day, &today.month, &today.year);
+
+    // Initialize age
+    ageYears = today.year - dob.year;
+    ageMonths = today.month - dob.month;
+    ageDays = today.day - dob.day;
+
+    // Adjust if birth month/day is ahead of current date
+    if (ageDays < 0) {
+        ageDays += 30; // Approximate
+        ageMonths--;
+    }
+
+    if (ageMonths < 0) {
+        ageMonths += 12;
+        ageYears--;
+    }
+
+    printf("\nAge is: %d years, %d months, %d days\n", ageYears, ageMonths, ageDays);
+
+    return 0;
+}
+
