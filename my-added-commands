@@ -1,0 +1,72 @@
+# 1. Configure Git (only once per machine or per project)
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+# 2. Initialize a Git repository
+git init
+
+# 3. Check the status of your working directory
+git status
+
+# 4. Add files to staging area
+git add <filename>         # Add one file
+git add .                  # Add all files
+
+# 5. Commit staged files
+git commit -m "Initial commit"
+
+# 6. View commit history
+git log
+
+# 7. See changes between commits or working directory
+git diff                   # Compare working directory vs. staging area
+git diff <commit1> <commit2>
+
+# 8. Create a new branch
+git branch <branch-name>
+
+# 9. List all branches
+git branch
+
+# 10. Switch to a branch
+git checkout <branch-name>          # Old method
+git switch <branch-name>            # Recommended (new)
+
+# 11. Create and switch to a new branch
+git checkout -b <branch-name>
+git switch -c <branch-name>
+
+# 12. Merge a branch into current branch
+git merge <branch-name>
+
+# 13. Rebase a branch
+git rebase <branch-name>
+
+# 14. Connect local repo to a remote GitHub repo
+git remote add origin https://github.com/username/repo-name.git
+
+# 15. Check remote info
+git remote -v
+
+# 16. Push code to remote repository
+git push -u origin main             # First push
+git push                            # Subsequent pushes
+
+# 17. Clone a repo
+git clone https://github.com/username/repo-name.git
+
+# 18. Pull latest changes
+git pull origin main
+
+# 19. Fetch changes from remote (no merge)
+git fetch origin
+
+# 20. Reset files
+git reset                           # Unstage files
+git reset --hard                    # Discard all changes
+24. Undo last commit (discard staged changes)
+git reset --mixed HEAD~1
+
+# 25. Undo last commit (permanent)
+git reset --hard HEAD~1
+
