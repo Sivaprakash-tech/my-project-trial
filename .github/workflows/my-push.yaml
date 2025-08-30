@@ -1,0 +1,11 @@
+name: On Push
+
+on: push
+
+jobs:
+  run-on-push:
+    runs-on: ubuntu-latest
+    steps:
+      - job1: Run on Push
+        run: echo "This ran on a push!"
+
